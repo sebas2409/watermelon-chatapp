@@ -12,5 +12,9 @@ $pusher = new Pusher\Pusher(
     '1350562',
     $options);
 
+$datos=[
+  "usuario"=>$_POST['usuario'],
+  "mensaje"=>$_POST['mensaje']
+];
 
-$pusher->trigger('chatApp', 'chatApp-event',$_POST['mensaje']);
+$pusher->trigger('chatApp', 'chatApp-event',$datos);

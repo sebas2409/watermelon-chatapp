@@ -4,11 +4,13 @@ let pusher = new Pusher('b32674861d96dba51b59', {
 
 let channel = pusher.subscribe('chatApp');
 channel.bind('chatApp-event', function(data) {
-    let nombre = document.getElementById('usuario').value;
     const d = new Date();
     let time = d.toLocaleTimeString();
+    let nombre=(data["usuario"]);
+    let mensaje=(data["mensaje"]);
     $('.card-body').append('<li>'+nombre+'</li>');
-    $('.card-body').append('<small>'+data+'</small><small style="float: right; color: #639ae7">'+time+'</small>');
+    $('.card-body').append('<small>'+mensaje+'</small><small style="float: right; color: #639ae7">'+time+'</small>');
+    document.getElementById('mensaje').value='';
 });
 function enviarDatos()
 {
@@ -17,7 +19,7 @@ function enviarDatos()
         url:'post.php',
         data:$('#formulario').serialize(),
         success: function (s) {
-            console.log(s);
+            console.log();
         }
     });
 }
