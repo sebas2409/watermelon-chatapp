@@ -12,9 +12,11 @@ channel.bind('chatApp-event', function(data) {
     if (nombreE !== nombre){
         $('.card-body').append('<li style="color: #e75e35">'+nombre+'</li>');
         $('.card-body').append('<small style="color: #e75e35">'+mensaje+'</small><small style="float: right; color: #639ae7">'+time+'</small>');
+        $('.card-body').scrollTop($('.card-body').prop('scrollHeight'));
     }else {
         $('.card-body').append('<li style="color: #8648c7">'+nombre+'</li>');
         $('.card-body').append('<small style="color: #8648c7">'+mensaje+'</small><small style="float: right; color: #639ae7">'+time+'</small>');
+        $('.card-body').scrollTop($('.card-body').prop('scrollHeight'));
     }
     document.getElementById('mensaje').value='';
 });
