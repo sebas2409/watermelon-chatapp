@@ -28,7 +28,7 @@ $nombre=$_POST['usuario'];
             <form method="post" action="post.php" onsubmit="enviarDatos(); return false;" id="formulario">
                 <div class="input-group">
                     <input class="form-control" type="text" value="<?php echo $nombre?>" id="usuario" name="usuario" readonly>
-                    <input class="form-control" type="text" placeholder="Escriba su mensaje" id="mensaje" name="mensaje">
+                    <input class="form-control" type="text" placeholder="Escriba su mensaje" id="mensaje" name="mensaje" required>
                     <input type="submit" class="btn btn-primary" id="boton" name="boton" value="Enviar">
                 </div>
             </form>
