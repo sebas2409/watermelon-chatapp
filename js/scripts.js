@@ -18,7 +18,6 @@ channel.bind('chatApp-event', function(data) {
         $('.card-body').append('<small style="color: #8648c7">'+mensaje+'</small><small style="float: right; color: #639ae7">'+time+'</small>');
         $('.card-body').scrollTop($('.card-body').prop('scrollHeight'));
     }
-    document.getElementById('mensaje').value='';
 });
 function enviarDatos()
 {
@@ -28,6 +27,7 @@ function enviarDatos()
         data:$('#formulario').serialize(),
         success: function (s) {
             console.log();
+            document.getElementById('mensaje').value='';
         }
     });
 }
